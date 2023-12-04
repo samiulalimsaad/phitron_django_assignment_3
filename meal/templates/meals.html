@@ -1,0 +1,23 @@
+{% include "base.html" %} {% block content %}
+<section class="p-4 container mx-auto">
+    <div class="grid grid-cols-4 gap-4">
+        {% for meal in meals %}
+        <div class="card bg-base-100 shadow-xl">
+            <figure>
+                <img
+                    src="{{meal.strCategoryThumb}}"
+                    alt="{{meal.strCategory}}"
+                />
+            </figure>
+            <div class="card-body">
+                <h2 class="card-title">{{meal.strMeal}}</h2>
+                <p>Category Id: {{meal.idCategory}}</p>
+                <p>Category: {{meal.strCategory}}</p>
+                <p>{{meal.strCategoryDescription | truncatewords:10 }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+{% endblock content %}
