@@ -4,4 +4,5 @@ from meal import views
 
 urlpatterns = [
     path("", views.meals),
+    path("/", views.meals),
 ]
